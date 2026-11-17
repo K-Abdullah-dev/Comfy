@@ -61,13 +61,25 @@ clone () {
   if [ -d "$dir" ]; then echo "  SKIP (exists): $name"; return 0; fi
   echo "  CLONE: $name"
   if git clone --depth 1 "$url" "$dir"; then
-    [ -f "$dir/requirements.txt" ] && pip install -r "$dir/requirements.txt" --quiet 2>/dev/null || true
+    # install this node's Python deps (visible failures, not swallowed)
+    if [ -f "$dir/requirements.txt" ]; then
+      pip install -r "$dir/requirements.txt" || { echo "  !! requirements failed: $name"; FAILS+=("deps: $name"); }
+    fi
+    # some nodes (e.g. Impact Pack) ship an install.py that must run
+    if [ -f "$dir/install.py" ]; then
+      ( cd "$dir" && python install.py ) || echo "  (install.py returned nonzero for $name — usually fine)"
+    fi
   else echo "  !! clone failed: $url"; FAILS+=("node: $url"); fi
 }
 
 install_nodes () {
   say "Custom nodes"
   mkdir -p "$COMFY_ROOT/custom_nodes"
+  # Common deps several nodes need but don't always pull in themselves.
+  # opencv-python-headless = OpenCV (cv2) without GUI libs — required by Impact Pack,
+  # and -headless avoids the libGL.so.1 error on a headless server.
+  echo "  Installing shared deps (opencv, etc.)"
+  pip install opencv-python-headless numpy pillow scipy || echo "  !! shared deps install hiccup"
   clone https://github.com/ltdrdata/ComfyUI-Manager
   clone https://github.com/Aaalice233/ComfyUI-Aaalice-Nodes
   clone https://github.com/Aaalice233/ComfyUI-Autocomplete-Aaalice
