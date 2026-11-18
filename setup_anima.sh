@@ -80,17 +80,25 @@ install_nodes () {
   # and -headless avoids the libGL.so.1 error on a headless server.
   echo "  Installing shared deps (opencv, etc.)"
   pip install opencv-python-headless numpy pillow scipy || echo "  !! shared deps install hiccup"
-  clone https://github.com/ltdrdata/ComfyUI-Manager
-  clone https://github.com/Aaalice233/ComfyUI-Aaalice-Nodes
-  clone https://github.com/Aaalice233/ComfyUI-Autocomplete-Aaalice
-  clone https://github.com/Aaalice233/ComfyUI-Aaalice-Workflow-Hub
-  clone https://github.com/Aaalice233/ComfyUI-Aaalice-Image-Picker
-  clone https://github.com/luxdelux7/ComfyUI-Forbidden-Vision
-  clone https://github.com/bedovyy/ComfyUI-WD-Timm-Tagger
-  clone https://github.com/rgthree/rgthree-comfy
-  clone https://github.com/kijai/ComfyUI-KJNodes
-  clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
-  clone https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler
+  # --- exact pack list, derived from the workflow's declared node sources ---
+  clone https://github.com/ltdrdata/ComfyUI-Manager            # GUI node/model manager
+  clone https://github.com/Aaalice233/ComfyUI-Aaalice-Nodes    # PromptSelector, QuickGroupManager, BooruGallery (core of the workflow)
+  clone https://github.com/Aaalice233/ComfyUI-Aaalice-Image-Picker  # AaaliceImagePicker
+  clone https://github.com/yawiii/ComfyUI-Prompt-Assistant     # PromptExpand, ImageCaptionNode
+  clone https://github.com/willmiao/ComfyUI-Lora-Manager       # Lora Loader (LoraManager) + trigger words
+  clone https://github.com/LoganBooker/SesquiLSR               # SesquiLatentUpscale (dual-sampler base)
+  clone https://github.com/harukimix/KreaSeedVarianceEnhancer  # KreaSeedVarianceEnhancer
+  clone https://github.com/luxdelux7/ComfyUI-Forbidden-Vision  # face refine
+  clone https://github.com/bedovyy/ComfyUI-WD-Timm-Tagger      # interrogation
+  clone https://github.com/scraed/LanPaint                     # LanPaint sampler (multi-sampling inpaint)
+  clone https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch  # InpaintCrop/Stitch
+  clone https://github.com/ltdrdata/ComfyUI-Impact-Pack        # ImpactIfNone (needs cv2)
+  clone https://github.com/kijai/ComfyUI-KJNodes               # SetNode/GetNode, ColorMatch, ModelPassThrough
+  clone https://github.com/rgthree/rgthree-comfy               # Any Switch, Image Comparer
+  # NOTE: the workflow also references nvidia-rtx-vsr-pro / storyAura/DLSS5-Comfyui
+  # (the "NvidiaUpscale" group). Those are Windows + RTX-desktop DLSS nodes and do NOT
+  # run on a Linux cloud GPU, so they are intentionally NOT installed. Leave that group
+  # muted/bypassed in the workflow; everything else works without it.
   echo "  (Any still-missing node: open ComfyUI-Manager -> Install Missing Custom Nodes.)"
 }
 
