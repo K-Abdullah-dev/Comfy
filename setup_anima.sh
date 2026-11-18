@@ -137,6 +137,23 @@ install_models () {
   for f in config.json model.safetensors selected_tags.csv; do
     fetch "https://huggingface.co/Bedovyy/pixai-tagger-v0.9-timm/resolve/main/$f" "$TAG/$f"
   done
+
+  # The workflow's fallback / img2img LoadImage nodes reference an example image
+  # (Aaalice_example.jpg) that isn't shipped. Without a file present those nodes
+  # fail validation ("required media input has no file selected") and block Run,
+  # even for plain txt2img. Drop in a neutral placeholder so they validate; the
+  # user replaces it with a real image only when actually doing img2img.
+  say "Placeholder input image (Aaalice_example.jpg)"
+  mkdir -p "$COMFY_ROOT/input"
+  if [ ! -s "$COMFY_ROOT/input/Aaalice_example.jpg" ]; then
+    if python -c "from PIL import Image; Image.new('RGB',(832,1216),(127,127,127)).save('$COMFY_ROOT/input/Aaalice_example.jpg','JPEG')" 2>/dev/null; then
+      echo "  placeholder ready"
+    else
+      echo "  (couldn't make placeholder; create input/Aaalice_example.jpg by hand if a LoadImage node complains)"
+    fi
+  else
+    echo "  SKIP (exists)"
+  fi
 }
 
 # -------------------------------------------------------------------- run
