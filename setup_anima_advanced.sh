@@ -119,6 +119,7 @@ install_models () {
   say "LoRA (CivitAI — need CIVITAI_TOKEN)"
   civitai_lora 2959007 2838381   # urn:air:anima:lora:civitai:1252497@2959007+2838381
   civitai_lora 3191697 3072447   # urn:air:anima:lora:civitai:2828738@3191697+3072447
+  civitai_lora 3062688 2941284   # urn:air:anima:lora:civitai:2724933@3062688+2941284
 
   say "SAM models"
   fetch "https://huggingface.co/Comfy-Org/sam3.1/resolve/main/checkpoints/sam3.1_multiplex_fp16.safetensors" \
