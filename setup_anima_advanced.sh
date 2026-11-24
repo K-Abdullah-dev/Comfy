@@ -101,6 +101,9 @@ install_nodes () {
   clone https://github.com/Fannovel16/comfyui_controlnet_aux
   clone https://github.com/rgthree/rgthree-comfy
   clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale
+  # Pose/tag picker (AnimaAdvancedV10_PosePicker.json alternate): PromptSwitch + WAS Text List nodes
+  clone https://github.com/Boba-svg/ComfyUI-PromptSwitch
+  clone https://github.com/WASasquatch/was-node-suite-comfyui
   # NOTE: the workflow also references RTXVideoSuperResolution (NVIDIA RTX-desktop /
   # Windows DLSS). It does NOT run on a Linux cloud GPU, so it's intentionally skipped.
   echo "  (Anything still missing: ComfyUI-Manager -> Install Missing Custom Nodes.)"

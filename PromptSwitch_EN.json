@@ -1,0 +1,2959 @@
+{
+  "id": "2db6d82e-7dca-44be-8e90-378fb16e60c2",
+  "revision": 0,
+  "last_node_id": 59,
+  "last_link_id": 46,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "PromptSwitch",
+      "pos": [
+        3390.5836331300948,
+        2610.6348208284485
+      ],
+      "size": [
+        357.3066104842492,
+        374
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "title": "両手など複数の手を使うポーズ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// clenched hands// 両手で握り拳を作る\n// cupping hands// 両手で何かをすくう仕草\n// double finger gun// 両手で指銃\n// double thumbs up// 両手で親指を立てる\n// double v// 両手でVサイン\n// fidgeting// 手をいじる（落ち着かない動作）\n// finger frame, rectangle// 指でフレームを作る仕草\n// heart hands// 両手でハート形を作る\n// heart hands duo// 2人でハートを作る\n// high five// ハイタッチ\n// shadow puppet// 手影絵（指や手で影絵を作る）\n// steepled fingers// 指先を合わせる\n// interlocked fingers// 指を組む\n// own hands clasped// 自分の手を握り合わせる\n// own hands together// 自分の手を合わせる\n// x arms// 腕を交差する\n// x fingers// 指を交差する\n// praying// 祈る"
+      ],
+      "widgets_values_named": {
+        "text": "// clenched hands// 両手で握り拳を作る\n// cupping hands// 両手で何かをすくう仕草\n// double finger gun// 両手で指銃\n// double thumbs up// 両手で親指を立てる\n// double v// 両手でVサイン\n// fidgeting// 手をいじる（落ち着かない動作）\n// finger frame, rectangle// 指でフレームを作る仕草\n// heart hands// 両手でハート形を作る\n// heart hands duo// 2人でハートを作る\n// high five// ハイタッチ\n// shadow puppet// 手影絵（指や手で影絵を作る）\n// steepled fingers// 指先を合わせる\n// interlocked fingers// 指を組む\n// own hands clasped// 自分の手を握り合わせる\n// own hands together// 自分の手を合わせる\n// x arms// 腕を交差する\n// x fingers// 指を交差する\n// praying// 祈る"
+      }
+    },
+    {
+      "id": 3,
+      "type": "PromptSwitch",
+      "pos": [
+        4527.591780726461,
+        2371.0494286201583
+      ],
+      "size": [
+        343.17878904855843,
+        284
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "title": "足の位置",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// crossed ankles// 足首をクロスさせる\n// legs folded// 足を折りたたむ\n// legs together// 足を閉じる\n// feet up// 足上げ\n// leg up// 片足を上げる\n// legs up// 両足を上げる\n// knees to chest// 両膝を胸に引き寄せる\n// legs over head// 両足を頭の上まで持ち上げる\n// leg lift// 片足を持ち上げる\n// outstretched leg// 足を前や横に伸ばす\n// split, sitting// 開脚\n// standing split// I字バランス\n// spread legs, palms on ground// 足を広げる"
+      ],
+      "widgets_values_named": {
+        "text": "// crossed ankles// 足首をクロスさせる\n// legs folded// 足を折りたたむ\n// legs together// 足を閉じる\n// feet up// 足上げ\n// leg up// 片足を上げる\n// legs up// 両足を上げる\n// knees to chest// 両膝を胸に引き寄せる\n// legs over head// 両足を頭の上まで持ち上げる\n// leg lift// 片足を持ち上げる\n// outstretched leg// 足を前や横に伸ばす\n// split, sitting// 開脚\n// standing split// I字バランス\n// spread legs, palms on ground// 足を広げる"
+      }
+    },
+    {
+      "id": 4,
+      "type": "PromptSwitch",
+      "pos": [
+        4527.591780726461,
+        2695.0494286201583
+      ],
+      "size": [
+        343.17878904855843,
+        200
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "title": "膝の位置",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// knees apart feet together// 膝を開き、足を揃える\n// knees together feet apart// 膝を揃え、足を開く\n// knee up// 片膝を上げる\n// knees up// 両膝を上げる"
+      ],
+      "widgets_values_named": {
+        "text": "// knees apart feet together// 膝を開き、足を揃える\n// knees together feet apart// 膝を揃え、足を開く\n// knee up// 片膝を上げる\n// knees up// 両膝を上げる"
+      }
+    },
+    {
+      "id": 5,
+      "type": "PromptSwitch",
+      "pos": [
+        4142.1676047934925,
+        2610.511942239709
+      ],
+      "size": [
+        357.3066104842492,
+        230
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "title": "手の位置を髪に",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// holding own hair//髪を持つ\n// holding own hair// 髪を持つツインテール\n// playing with own hair// 髪いじり\n// twirling hair// 髪を指でくるくる巻く仕草\n// hair flip// 髪をかき上げる\n// hand in own hair// 髪に手を入れる\n// hands in hair// 髪に両手を入れる\n// tucking hair// 髪を耳にかける\n// bunching hair// 手ツインテ\n// adjusting hair// 髪を直す"
+      ],
+      "widgets_values_named": {
+        "text": "// holding own hair//髪を持つ\n// holding own hair// 髪を持つツインテール\n// playing with own hair// 髪いじり\n// twirling hair// 髪を指でくるくる巻く仕草\n// hair flip// 髪をかき上げる\n// hand in own hair// 髪に手を入れる\n// hands in hair// 髪に両手を入れる\n// tucking hair// 髪を耳にかける\n// bunching hair// 手ツインテ\n// adjusting hair// 髪を直す"
+      }
+    },
+    {
+      "id": 6,
+      "type": "PromptSwitch",
+      "pos": [
+        4527.591780726461,
+        2935.0494286201583
+      ],
+      "size": [
+        343.17878904855843,
+        200
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "title": "足の向き・つま先の状態",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// pigeon-toed// 内股（つま先を内側に向ける）\n// plantar flexion// 底屈（つま先を下に向ける）\n// tiptoes// つま先立ち\n// tiptoe kiss// つま先立ちでキス"
+      ],
+      "widgets_values_named": {
+        "text": "// pigeon-toed// 内股（つま先を内側に向ける）\n// plantar flexion// 底屈（つま先を下に向ける）\n// tiptoes// つま先立ち\n// tiptoe kiss// つま先立ちでキス"
+      }
+    },
+    {
+      "id": 7,
+      "type": "PromptSwitch",
+      "pos": [
+        3074,
+        2623
+      ],
+      "size": [
+        288.0740869451929,
+        212
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "title": "体の傾き、姿勢",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// arched back// 背中を反らせる\n// bent over// 前屈み\n// leaning back// 後ろに寄りかかる\n// arm support// 腕で体を支える\n// leaning forward// 前に寄りかかる\n// slouching// 猫背\n// superhero landing// 三点着地\n// fighting stance// 戦闘態勢\n// twisted torso// 体をひねる、振り返る"
+      ],
+      "widgets_values_named": {
+        "text": "// arched back// 背中を反らせる\n// bent over// 前屈み\n// leaning back// 後ろに寄りかかる\n// arm support// 腕で体を支える\n// leaning forward// 前に寄りかかる\n// slouching// 猫背\n// superhero landing// 三点着地\n// fighting stance// 戦闘態勢\n// twisted torso// 体をひねる、振り返る"
+      }
+    },
+    {
+      "id": 8,
+      "type": "PromptSwitch",
+      "pos": [
+        3074,
+        2371
+      ],
+      "size": [
+        288.0740869451929,
+        212
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "title": "動作ポーズ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// walking// 歩く\n// running// 走る\n// jumping// ジャンプする\n// hopping// 前方へジャンプ\n// stretching// ストレッチ\n// yoga// ヨガ\n// balancing// バランスをとる\n// bowing// お辞儀\n// curtsey// カーテシー"
+      ],
+      "widgets_values_named": {
+        "text": "// walking// 歩く\n// running// 走る\n// jumping// ジャンプする\n// hopping// 前方へジャンプ\n// stretching// ストレッチ\n// yoga// ヨガ\n// balancing// バランスをとる\n// bowing// お辞儀\n// curtsey// カーテシー"
+      }
+    },
+    {
+      "id": 9,
+      "type": "PromptSwitch",
+      "pos": [
+        3781.6501812753495,
+        2375.9627929178455
+      ],
+      "size": [
+        332.65221148713454,
+        200
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "title": "腕を曲げるポーズ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// crossed arms// 腕を組む\n// arm across waist// 腰に腕を回す\n// flexing// マッスルポーズ\n// shrugging// 肩をすくめる\n// w arms// W字型の腕のポーズ\n// head rest// 頬杖をつく\n// hugging object, cushion// 抱える"
+      ],
+      "widgets_values_named": {
+        "text": "// crossed arms// 腕を組む\n// arm across waist// 腰に腕を回す\n// flexing// マッスルポーズ\n// shrugging// 肩をすくめる\n// w arms// W字型の腕のポーズ\n// head rest// 頬杖をつく\n// hugging object, cushion// 抱える"
+      }
+    },
+    {
+      "id": 10,
+      "type": "PromptSwitch",
+      "pos": [
+        4142.1676047934925,
+        2370.511942239709
+      ],
+      "size": [
+        357.3066104842492,
+        200
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "title": "手の位置を帽子に /C",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// hat tip// 帽子を触るジェスチャー\nadjusting headwear// 帽子を直す\n// hand on headwear// 帽子に手を置く"
+      ],
+      "widgets_values_named": {
+        "text": "// hat tip// 帽子を触るジェスチャー\nadjusting headwear// 帽子を直す\n// hand on headwear// 帽子に手を置く"
+      }
+    },
+    {
+      "id": 11,
+      "type": "PromptSwitch",
+      "pos": [
+        2753.87894340596,
+        2610.596795080444
+      ],
+      "size": [
+        315.7670963608148,
+        266
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "title": "座るポーズ、座り方",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// sitting// 座る\n// kneeling// ひざまずく、膝立ち\n// on one knee// 片膝をつく\n// squatting// しゃがむ\n// crossed legs// 足を組む\n// fetal position// 胎児の姿勢\n// seiza// 正座\n// wariza// 割座\n// yokozuwari// 横座り\n// reclining// もたれかかる\n// sitting backwards// 後ろ向きに座る\n// invisible chair// 空気椅子"
+      ],
+      "widgets_values_named": {
+        "text": "// sitting// 座る\n// kneeling// ひざまずく、膝立ち\n// on one knee// 片膝をつく\n// squatting// しゃがむ\n// crossed legs// 足を組む\n// fetal position// 胎児の姿勢\n// seiza// 正座\n// wariza// 割座\n// yokozuwari// 横座り\n// reclining// もたれかかる\n// sitting backwards// 後ろ向きに座る\n// invisible chair// 空気椅子"
+      }
+    },
+    {
+      "id": 12,
+      "type": "PromptSwitch",
+      "pos": [
+        2753.87894340596,
+        2370.596795080444
+      ],
+      "size": [
+        315.7670963608148,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "title": "横たわるポーズ /C",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "lying// 横たわる\n// on back// 仰向け\n// on side// 横向き(寝る)\n// on stomach// うつ伏せ\n// the pose// うつ伏せで足を立てる"
+      ],
+      "widgets_values_named": {
+        "text": "lying// 横たわる\n// on back// 仰向け\n// on side// 横向き(寝る)\n// on stomach// うつ伏せ\n// the pose// うつ伏せで足を立てる"
+      }
+    },
+    {
+      "id": 13,
+      "type": "PromptSwitch",
+      "pos": [
+        2753.87894340596,
+        2916.596795080444
+      ],
+      "size": [
+        315.7670963608148,
+        200
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "title": "立つポーズ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// standing// 立つ\n// legs apart// 脚を広げる\n// standing on one leg// 片足立ち\n// contrapposto// コントラポスト\n// sway back// スウェイバック\n// against wall// 壁にもたれかかる"
+      ],
+      "widgets_values_named": {
+        "text": "// standing// 立つ\n// legs apart// 脚を広げる\n// standing on one leg// 片足立ち\n// contrapposto// コントラポスト\n// sway back// スウェイバック\n// against wall// 壁にもたれかかる"
+      }
+    },
+    {
+      "id": 14,
+      "type": "PromptSwitch",
+      "pos": [
+        3390.5836331300948,
+        2370.6348208284485
+      ],
+      "size": [
+        357.3066104842492,
+        200
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "title": "腕を上げるポーズ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// arm up// 腕を上げる\n// arms up// 両腕を上げる\n// arm above head// 腕を頭の上に上げる\n// arm on own head// 腕を頭の上に乗せる\n// arm behind head// 頭の後ろに腕を回す\n// arms behind head// 頭の後ろで腕を組む"
+      ],
+      "widgets_values_named": {
+        "text": "// arm up// 腕を上げる\n// arms up// 両腕を上げる\n// arm above head// 腕を頭の上に上げる\n// arm on own head// 腕を頭の上に乗せる\n// arm behind head// 頭の後ろに腕を回す\n// arms behind head// 頭の後ろで腕を組む"
+      }
+    },
+    {
+      "id": 15,
+      "type": "PromptSwitch",
+      "pos": [
+        4142.1676047934925,
+        2880.511942239709
+      ],
+      "size": [
+        357.3066104842492,
+        200
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "title": "手の位置を頭に",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// hand on own forehead// 手を額に\n// scratching head// 頭を掻く\n// hand on own head// 手を頭に\n// hands on own head// 両手を頭に"
+      ],
+      "widgets_values_named": {
+        "text": "// hand on own forehead// 手を額に\n// scratching head// 頭を掻く\n// hand on own head// 手を頭に\n// hands on own head// 両手を頭に"
+      }
+    },
+    {
+      "id": 16,
+      "type": "PromptSwitch",
+      "pos": [
+        3781.6501812753495,
+        2615.9627929178455
+      ],
+      "size": [
+        332.65221148713454,
+        200
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "title": "腕を下ろすポーズ /C",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "arm at side// 腕を体の横に\n// arms at sides// 両腕を体の横に\n// v arms// V字型の腕のポーズ\n// arm behind back// 背中に腕を回す\n// arms behind back// 背中で両腕を組む"
+      ],
+      "widgets_values_named": {
+        "text": "arm at side// 腕を体の横に\n// arms at sides// 両腕を体の横に\n// v arms// V字型の腕のポーズ\n// arm behind back// 背中に腕を回す\n// arms behind back// 背中で両腕を組む"
+      }
+    },
+    {
+      "id": 17,
+      "type": "PromptSwitch",
+      "pos": [
+        3390.5836331300948,
+        3024.6348208284485
+      ],
+      "size": [
+        357.3066104842492,
+        200
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "title": "腕を伸ばすポーズ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// outstretched arm// 腕を伸ばす\n// outstretched arms// 両腕を広げる(伸ばす)\n// spread arms// 両腕を広げる\n// reaching// 手を伸ばす\n// reaching towards viewer// こちらに手を伸ばす\n// t-pose// T字型のポーズ\n// a-pose// A字型のポーズ"
+      ],
+      "widgets_values_named": {
+        "text": "// outstretched arm// 腕を伸ばす\n// outstretched arms// 両腕を広げる(伸ばす)\n// spread arms// 両腕を広げる\n// reaching// 手を伸ばす\n// reaching towards viewer// こちらに手を伸ばす\n// t-pose// T字型のポーズ\n// a-pose// A字型のポーズ"
+      }
+    },
+    {
+      "id": 18,
+      "type": "PromptSwitch",
+      "pos": [
+        3781.6501812753495,
+        2855.9627929178455
+      ],
+      "size": [
+        332.7290646278834,
+        200
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "title": "腕を膝に置くポーズ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// arm on knee// 腕を膝に置く\n// arms on knees, knees up// 両腕を膝に置く"
+      ],
+      "widgets_values_named": {
+        "text": "// arm on knee// 腕を膝に置く\n// arms on knees, knees up// 両腕を膝に置く"
+      }
+    },
+    {
+      "id": 19,
+      "type": "Text List",
+      "pos": [
+        3811.565541647165,
+        1956.8712674672563
+      ],
+      "size": [
+        140,
+        146
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "shape": 7,
+          "type": "STRING",
+          "link": 2
+        },
+        {
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "link": 3
+        },
+        {
+          "name": "text_c",
+          "shape": 7,
+          "type": "STRING",
+          "link": 4
+        },
+        {
+          "name": "text_d",
+          "shape": 7,
+          "type": "STRING",
+          "link": 5
+        },
+        {
+          "name": "text_e",
+          "shape": 7,
+          "type": "STRING",
+          "link": 6
+        },
+        {
+          "name": "text_f",
+          "shape": 7,
+          "type": "STRING",
+          "link": 7
+        },
+        {
+          "name": "text_g",
+          "shape": 7,
+          "type": "STRING",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LIST",
+          "type": "LIST",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text List",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      }
+    },
+    {
+      "id": 22,
+      "type": "PromptSwitch",
+      "pos": [
+        3664.888784570913,
+        3327.4667479458294
+      ],
+      "size": [
+        391.74874149458446,
+        216
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "title": "胸チラ　ブラ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "//lifting shirt with both hands, white shirt // シャツをたくし上げる\n//lifting shirt with one hand, oversized shirt // 片手でたくし上げる\n// shirt lift, white shirt, navel// めくれた状態（動作なし）\n// shirt lift, midriff, navel peek// お腹をチラ見せ\n//lifting shirt with both hands, navel, bare stomach // へそ出しシーン\n// slightly lifting shirt, navel peek// 少しだけめくれている\n// shirt lift, bra peek, collarbone// ブラがチラ見え\n// lifting shirt with both hands, underboob, no bra// 下乳チラ見え\n//shirt lift, cleavage peek, white bra // 胸の谷間チラ見え\n"
+      ],
+      "widgets_values_named": {
+        "text": "//lifting shirt with both hands, white shirt // シャツをたくし上げる\n//lifting shirt with one hand, oversized shirt // 片手でたくし上げる\n// shirt lift, white shirt, navel// めくれた状態（動作なし）\n// shirt lift, midriff, navel peek// お腹をチラ見せ\n//lifting shirt with both hands, navel, bare stomach // へそ出しシーン\n// slightly lifting shirt, navel peek// 少しだけめくれている\n// shirt lift, bra peek, collarbone// ブラがチラ見え\n// lifting shirt with both hands, underboob, no bra// 下乳チラ見え\n//shirt lift, cleavage peek, white bra // 胸の谷間チラ見え\n"
+      }
+    },
+    {
+      "id": 23,
+      "type": "PromptSwitch",
+      "pos": [
+        2826.400080632002,
+        3806.4463339487115
+      ],
+      "size": [
+        375.42582897844,
+        242
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "title": "q",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// female masturbation// 女性の自慰行為\n\n// deepthroat,fellatio,excessive cum, water dripping from the mouth// フェラ＆よだれ\n\n// Soaked sheets, puddles, dripping wet// 水浸しのシーツ\n// Panties on one leg// 片足にパンティ\n// doggystyle,(all fours:1.4)// バック体位\n\n\n\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "// female masturbation// 女性の自慰行為\n\n// deepthroat,fellatio,excessive cum, water dripping from the mouth// フェラ＆よだれ\n\n// Soaked sheets, puddles, dripping wet// 水浸しのシーツ\n// Panties on one leg// 片足にパンティ\n// doggystyle,(all fours:1.4)// バック体位\n\n\n\n\n\n"
+      }
+    },
+    {
+      "id": 24,
+      "type": "PromptSwitch",
+      "pos": [
+        3662.0535160225345,
+        3661.3023967967533
+      ],
+      "size": [
+        372.41606534313496,
+        193.69510064985934
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            36
+          ]
+        }
+      ],
+      "title": "パンチラスカート",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "//skirt lift, pleated skirt // スカートがめくれている状態\n// skirt lift, pleated skirt, panties peek// めくれて下着がチラ見え\n//lifting skirt with both hands, pleated skirt // スカートの裾をつかんでめくる\n// lifting skirt with one hand, mini skirt// 片手でめくる"
+      ],
+      "widgets_values_named": {
+        "text": "//skirt lift, pleated skirt // スカートがめくれている状態\n// skirt lift, pleated skirt, panties peek// めくれて下着がチラ見え\n//lifting skirt with both hands, pleated skirt // スカートの裾をつかんでめくる\n// lifting skirt with one hand, mini skirt// 片手でめくる"
+      }
+    },
+    {
+      "id": 25,
+      "type": "PromptSwitch",
+      "pos": [
+        3250.3501384953397,
+        3752.998662536771
+      ],
+      "size": [
+        364.456129913583,
+        252
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "title": "陰毛",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// pubic hair,// 陰毛\n// black sparse pubic hair,// 薄い陰毛\n//thick pubic hair,// 濃い陰毛\n//very thick pubic hair,// 非常に濃い陰毛\n//,// 陰部を広げる\n// spreading own pussy\n// hand between legs// 脚の間に手\n\n//,// パンティ\n// panties\n//,// パンツめくり\n// panty pull"
+      ],
+      "widgets_values_named": {
+        "text": "// pubic hair,// 陰毛\n// black sparse pubic hair,// 薄い陰毛\n//thick pubic hair,// 濃い陰毛\n//very thick pubic hair,// 非常に濃い陰毛\n//,// 陰部を広げる\n// spreading own pussy\n// hand between legs// 脚の間に手\n\n//,// パンティ\n// panties\n//,// パンツめくり\n// panty pull"
+      }
+    },
+    {
+      "id": 26,
+      "type": "PromptSwitch",
+      "pos": [
+        2815.1947841063497,
+        3292.6634426686796
+      ],
+      "size": [
+        400,
+        456
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "title": "表情",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "//,// 恥じらい(基本)\n// shy, embarrassed,open mouth,\n//,// 赤面\n// blush\n//,// 全面赤面\n// (full-face blush:1.60)\n//,// 絶叫\n// (wide open mouth, screaming:1.50)\n//,// 恥じらい(顔を覆う)\n// covering own eyes, hands on own face, shy, embarrassed\n//,// 目を逸らす+赤面(強調)\n// (averting eyes:2),(blush:1.5)\n//,// 口を覆う(自然文版)\n// covering own mouth, embarrassed\n//,// 仰け反り絶頂\n// (head back:2.00)\n//,// 他人を見る\n// (looking at another,eye contact:1.30)\n\n\n\n\n\n//,// ここに自由に追加　【ここは見出し】\n// 【ここにはタグ】\n// コンパクト表示ならここにタグ//ここに見出し\n \n"
+      ],
+      "widgets_values_named": {
+        "text": "//,// 恥じらい(基本)\n// shy, embarrassed,open mouth,\n//,// 赤面\n// blush\n//,// 全面赤面\n// (full-face blush:1.60)\n//,// 絶叫\n// (wide open mouth, screaming:1.50)\n//,// 恥じらい(顔を覆う)\n// covering own eyes, hands on own face, shy, embarrassed\n//,// 目を逸らす+赤面(強調)\n// (averting eyes:2),(blush:1.5)\n//,// 口を覆う(自然文版)\n// covering own mouth, embarrassed\n//,// 仰け反り絶頂\n// (head back:2.00)\n//,// 他人を見る\n// (looking at another,eye contact:1.30)\n\n\n\n\n\n//,// ここに自由に追加　【ここは見出し】\n// 【ここにはタグ】\n// コンパクト表示ならここにタグ//ここに見出し\n \n"
+      }
+    },
+    {
+      "id": 27,
+      "type": "PromptSwitch",
+      "pos": [
+        3252.33646551109,
+        3324.7347358493284
+      ],
+      "size": [
+        360.12151161036127,
+        328
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            33
+          ]
+        }
+      ],
+      "title": "胸",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// lifting her clothes, her breasts are lifted, nipples, her clothes are lifted, nipples,// たくし上げて乳出す\n// (clothes lift:1.4),teeth,(closed mouth:1.1),put clothes in one’s mouth,pink bra,// 口でくわえたくし上げ\n\n// nipples// 乳首\n// flat chest// 極小\n// small breasts// 小さめ\n// medium breasts// 標準\n// large breasts// 大きめ\n// huge breasts// 巨乳\n// gigantic breasts// 超巨乳\n// sagging breasts// 垂れ乳\n// huge breasts, sagging breasts// 巨乳+垂れ乳\n// unaligned breasts, bouncing breasts// 左右非対称+揺れる胸\n// covering breasts// 胸を隠す\n\n//,// ブラジャー\n// bra"
+      ],
+      "widgets_values_named": {
+        "text": "// lifting her clothes, her breasts are lifted, nipples, her clothes are lifted, nipples,// たくし上げて乳出す\n// (clothes lift:1.4),teeth,(closed mouth:1.1),put clothes in one’s mouth,pink bra,// 口でくわえたくし上げ\n\n// nipples// 乳首\n// flat chest// 極小\n// small breasts// 小さめ\n// medium breasts// 標準\n// large breasts// 大きめ\n// huge breasts// 巨乳\n// gigantic breasts// 超巨乳\n// sagging breasts// 垂れ乳\n// huge breasts, sagging breasts// 巨乳+垂れ乳\n// unaligned breasts, bouncing breasts// 左右非対称+揺れる胸\n// covering breasts// 胸を隠す\n\n//,// ブラジャー\n// bra"
+      }
+    },
+    {
+      "id": 28,
+      "type": "PromptSwitch",
+      "pos": [
+        2361.822250884386,
+        2882.9951884318157
+      ],
+      "size": [
+        357.68351960453856,
+        200
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "title": "遠近表現",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// perspective// 遠近法\n// atmospheric perspective// 大気遠近法\n// fisheye// 魚眼レンズ\n// panorama// パノラマ\n// vanishing point// 消失点"
+      ],
+      "widgets_values_named": {
+        "text": "// perspective// 遠近法\n// atmospheric perspective// 大気遠近法\n// fisheye// 魚眼レンズ\n// panorama// パノラマ\n// vanishing point// 消失点"
+      }
+    },
+    {
+      "id": 29,
+      "type": "PromptSwitch",
+      "pos": [
+        2366.5238073529886,
+        3291.4168104145506
+      ],
+      "size": [
+        434.133009233728,
+        682
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "\n//,// ポーズ4種(ランダム自然文混合)\n// {crossed arms, looking down. A dominant, commanding posture.|smile. A casual, relaxed pose with loose shoulders.|half-closed eyes. One arm rests on the back of a chair, giving a cool, aloof expression.|standing straight with a confident stance.}\n\n//,// キューブリック(ランダム弱め3段階)\n// {(Kubrick-esque gaze,sideways,leaning to the side:1.05)|(Kubrick-esque gaze,sideways,leaning to the side:1.1)|(Kubrick-esque gaze,sideways,leaning to the side:1.15)}\n\n//,// キューブリック単発(強め単体)\n// Kubrick-esque gaze,sideways,leaning to the side\n\n//,// 目/口を隠す(ランダム6パターン)\n// {covering own eyes,hands on own face,shy,embarrassed|(covering own eyes,hands on own face,shy,embarrassed:1.05)|(covering own eyes,hands on own face,shy,embarrassed:1.1)|covering own mouth,embarrassed|(covering own mouth,embarrassed:1.05)|(covering own mouth,embarrassed:1.1)}\n\n//,// 仰け反り(ランダム弱め4段階)\n// {(head back, arched back:0.3)|(head back, arched back:0.6)|head back, arched back|(head back, arched back:1.1)}\n\n//,// 背反り単体(ランダム弱め4段階)\n// {(arched back:0.2)|(arched back:0.5)|arched back|(arched back:1.05)}\n\n//,// よだれ(ランダム3段階)\n// {drooling|(drooling:1.05)|(drooling:1.15)}\n\n\n//,// 断面図/絶頂表現\n// cross-section, uterus, (cum, orgasm:1.1)\n\n//,// 仰け反り(強め単体)\n// head back, arched back\n\n\n//,// 背反り(強め)\n// arched back\n\n\n//,// 汗\n// sweat\n\n//,// 全裸\n// completely nude\n\n\n//,// 背景(白)\n// simple background, white background\n\n//,// 男性の顔を隠す\n// faceless male:1.25), (head out of frame\n\n//,// ポーズ4種(自然文混合・推奨)\n// {crossed arms, looking down. A dominant, commanding posture.|smile. A casual, relaxed pose with loose shoulders.|half-closed eyes. One arm rests on the back of a chair, giving a cool, aloof expression.|standing straight with a confident stance.},\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "\n//,// ポーズ4種(ランダム自然文混合)\n// {crossed arms, looking down. A dominant, commanding posture.|smile. A casual, relaxed pose with loose shoulders.|half-closed eyes. One arm rests on the back of a chair, giving a cool, aloof expression.|standing straight with a confident stance.}\n\n//,// キューブリック(ランダム弱め3段階)\n// {(Kubrick-esque gaze,sideways,leaning to the side:1.05)|(Kubrick-esque gaze,sideways,leaning to the side:1.1)|(Kubrick-esque gaze,sideways,leaning to the side:1.15)}\n\n//,// キューブリック単発(強め単体)\n// Kubrick-esque gaze,sideways,leaning to the side\n\n//,// 目/口を隠す(ランダム6パターン)\n// {covering own eyes,hands on own face,shy,embarrassed|(covering own eyes,hands on own face,shy,embarrassed:1.05)|(covering own eyes,hands on own face,shy,embarrassed:1.1)|covering own mouth,embarrassed|(covering own mouth,embarrassed:1.05)|(covering own mouth,embarrassed:1.1)}\n\n//,// 仰け反り(ランダム弱め4段階)\n// {(head back, arched back:0.3)|(head back, arched back:0.6)|head back, arched back|(head back, arched back:1.1)}\n\n//,// 背反り単体(ランダム弱め4段階)\n// {(arched back:0.2)|(arched back:0.5)|arched back|(arched back:1.05)}\n\n//,// よだれ(ランダム3段階)\n// {drooling|(drooling:1.05)|(drooling:1.15)}\n\n\n//,// 断面図/絶頂表現\n// cross-section, uterus, (cum, orgasm:1.1)\n\n//,// 仰け反り(強め単体)\n// head back, arched back\n\n\n//,// 背反り(強め)\n// arched back\n\n\n//,// 汗\n// sweat\n\n//,// 全裸\n// completely nude\n\n\n//,// 背景(白)\n// simple background, white background\n\n//,// 男性の顔を隠す\n// faceless male:1.25), (head out of frame\n\n//,// ポーズ4種(自然文混合・推奨)\n// {crossed arms, looking down. A dominant, commanding posture.|smile. A casual, relaxed pose with loose shoulders.|half-closed eyes. One arm rests on the back of a chair, giving a cool, aloof expression.|standing straight with a confident stance.},\n\n"
+      }
+    },
+    {
+      "id": 30,
+      "type": "PromptSwitch",
+      "pos": [
+        2361.822250884386,
+        2642.9951884318157
+      ],
+      "size": [
+        357.68351960453856,
+        200
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "title": "アングル、向き",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// straight-on// 正面から\n// from above// 上から、俯瞰\n// from below// 下から、アオリ\n// from behind// 後ろから\n// from side// 横から\n// dutch angle// ダッチアングル\n// sideways// 横向き\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "// straight-on// 正面から\n// from above// 上から、俯瞰\n// from below// 下から、アオリ\n// from behind// 後ろから\n// from side// 横から\n// dutch angle// ダッチアングル\n// sideways// 横向き\n\n"
+      }
+    },
+    {
+      "id": 31,
+      "type": "PromptSwitch",
+      "pos": [
+        2361.822250884386,
+        2368.9951884318157
+      ],
+      "size": [
+        357.68351960453856,
+        234
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "title": "画角",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "// full body// 全身\n// portrait// ポートレート\n// upper body//上半身\n// lower body// 下半身\n// cowboy shot// 膝上くらいより上\n// feet out of frame// 足が画面外\n// close-up// 顔のアップ、接写\n// profile// 横顔\n// wide shot// ワイドショット\n// multiple views// 複数視点\n"
+      ],
+      "widgets_values_named": {
+        "text": "// full body// 全身\n// portrait// ポートレート\n// upper body//上半身\n// lower body// 下半身\n// cowboy shot// 膝上くらいより上\n// feet out of frame// 足が画面外\n// close-up// 顔のアップ、接写\n// profile// 横顔\n// wide shot// ワイドショット\n// multiple views// 複数視点\n"
+      }
+    },
+    {
+      "id": 32,
+      "type": "Text List",
+      "pos": [
+        3812.349999999998,
+        2030.1300000000012
+      ],
+      "size": [
+        140,
+        146
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "shape": 7,
+          "type": "STRING",
+          "link": 24
+        },
+        {
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "link": 25
+        },
+        {
+          "name": "text_c",
+          "shape": 7,
+          "type": "STRING",
+          "link": 26
+        },
+        {
+          "name": "text_d",
+          "shape": 7,
+          "type": "STRING",
+          "link": 27
+        },
+        {
+          "name": "text_e",
+          "shape": 7,
+          "type": "STRING",
+          "link": 28
+        },
+        {
+          "name": "text_f",
+          "shape": 7,
+          "type": "STRING",
+          "link": 32
+        },
+        {
+          "name": "text_g",
+          "shape": 7,
+          "type": "STRING",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LIST",
+          "type": "LIST",
+          "links": [
+            29
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text List",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      }
+    },
+    {
+      "id": 33,
+      "type": "Text List",
+      "pos": [
+        3812.349999999998,
+        1993.1300000000017
+      ],
+      "size": [
+        140,
+        146
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "shape": 7,
+          "type": "STRING",
+          "link": 15
+        },
+        {
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "link": 16
+        },
+        {
+          "name": "text_c",
+          "shape": 7,
+          "type": "STRING",
+          "link": 17
+        },
+        {
+          "name": "text_d",
+          "shape": 7,
+          "type": "STRING",
+          "link": 18
+        },
+        {
+          "name": "text_e",
+          "shape": 7,
+          "type": "STRING",
+          "link": 19
+        },
+        {
+          "name": "text_f",
+          "shape": 7,
+          "type": "STRING",
+          "link": 20
+        },
+        {
+          "name": "text_g",
+          "shape": 7,
+          "type": "STRING",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LIST",
+          "type": "LIST",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text List",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      }
+    },
+    {
+      "id": 35,
+      "type": "StringConcatenate",
+      "pos": [
+        4100.349999999997,
+        1959.7970096550296
+      ],
+      "size": [
+        210,
+        166
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 12
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.61",
+        "Node name for S&R": "StringConcatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "string_a": true,
+            "string_b": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        ","
+      ],
+      "widgets_values_named": {
+        "string_a": "",
+        "string_b": "",
+        "delimiter": ","
+      },
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": "default"
+    },
+    {
+      "id": 37,
+      "type": "Text List to Text",
+      "pos": [
+        3929.1378072721645,
+        1956.8712674672563
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_list",
+          "type": "LIST",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text List to Text",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        ", "
+      ],
+      "widgets_values_named": {
+        "delimiter": ", "
+      }
+    },
+    {
+      "id": 42,
+      "type": "Text List to Text",
+      "pos": [
+        3930.3499999999976,
+        1993.1300000000017
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_list",
+          "type": "LIST",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text List to Text",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        ", "
+      ],
+      "widgets_values_named": {
+        "delimiter": ", "
+      }
+    },
+    {
+      "id": 43,
+      "type": "Text List to Text",
+      "pos": [
+        3929.3499999999976,
+        2030.1300000000012
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_list",
+          "type": "LIST",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text List to Text",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        ", "
+      ],
+      "widgets_values_named": {
+        "delimiter": ", "
+      }
+    },
+    {
+      "id": 44,
+      "type": "StringConcatenate",
+      "pos": [
+        4194.349999999997,
+        1959.7970096550296
+      ],
+      "size": [
+        210,
+        166
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 30
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.61",
+        "Node name for S&R": "StringConcatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "string_a": true,
+            "string_b": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        ","
+      ],
+      "widgets_values_named": {
+        "string_a": "",
+        "string_b": "",
+        "delimiter": ","
+      },
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": "default"
+    },
+    {
+      "id": 45,
+      "type": "Text List",
+      "pos": [
+        3809.122555083731,
+        2065.4006360898406
+      ],
+      "size": [
+        140,
+        146
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "shape": 7,
+          "type": "STRING",
+          "link": 34
+        },
+        {
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "link": 35
+        },
+        {
+          "name": "text_c",
+          "shape": 7,
+          "type": "STRING",
+          "link": 36
+        },
+        {
+          "name": "text_d",
+          "shape": 7,
+          "type": "STRING",
+          "link": 37
+        },
+        {
+          "name": "text_e",
+          "shape": 7,
+          "type": "STRING",
+          "link": 46
+        },
+        {
+          "name": "text_f",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "text_g",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LIST",
+          "type": "LIST",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text List",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      }
+    },
+    {
+      "id": 46,
+      "type": "Text List to Text",
+      "pos": [
+        3930.0274895561643,
+        2064.7199914554626
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_list",
+          "type": "LIST",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            40
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text List to Text",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        ", "
+      ],
+      "widgets_values_named": {
+        "delimiter": ", "
+      }
+    },
+    {
+      "id": 47,
+      "type": "StringConcatenate",
+      "pos": [
+        4288.349999999997,
+        1959.7970096550296
+      ],
+      "size": [
+        210,
+        166
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 39
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            41
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.61",
+        "Node name for S&R": "StringConcatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "string_a": true,
+            "string_b": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        ","
+      ],
+      "widgets_values_named": {
+        "string_a": "",
+        "string_b": "",
+        "delimiter": ","
+      },
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": "default"
+    },
+    {
+      "id": 48,
+      "type": "Text _O",
+      "pos": [
+        5384.649697620285,
+        1909.5247729271791
+      ],
+      "size": [
+        343.7845249113227,
+        167.73660630145946
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 29,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            42
+          ]
+        }
+      ],
+      "title": "📝 ポジティブプロンプト 書き加え用",
+      "properties": {
+        "cnr_id": "ComfyUI-QualityOfLifeSuit_Omar92",
+        "ver": "793b6d27e9e501e56aeb630cb502462bc0af9fed",
+        "Node name for S&R": "Text _O",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "lm_marker_role": "send_prompt_target",
+        "lm_marker_original_title": "書き加え用"
+      },
+      "widgets_values": [
+        "このノードをいつも使用しているポジティブノードと入れ替えるかライン接続切り替えて使用してください"
+      ],
+      "widgets_values_named": {
+        "text": "このノードをいつも使用しているポジティブノードと入れ替えるかライン接続切り替えて使用してください"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 49,
+      "type": "StringConcatenate",
+      "pos": [
+        4382.349999999997,
+        1959.7970096550296
+      ],
+      "size": [
+        210,
+        166
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 41
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            44
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.61",
+        "Node name for S&R": "StringConcatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "string_a": true,
+            "string_b": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        ","
+      ],
+      "widgets_values_named": {
+        "string_a": "",
+        "string_b": "",
+        "delimiter": ","
+      },
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": "default"
+    },
+    {
+      "id": 50,
+      "type": "MarkdownNote",
+      "pos": [
+        1743.5501222462894,
+        2330.8546853712696
+      ],
+      "size": [
+        602.3576371232743,
+        763.5199802789912
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "guidance",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "## 必要なカスタムノード\n\n---\n\n\n[ComfyUI-PromptSwitch](https://github.com/Boba-svg/ComfyUI-PromptSwitch)\n\nこちらからDownload、もしくわカスタムノードマネージャーからDownload。\n\n\n---\n[ComfyUI-AutoBatchRunner](https://github.com/Boba-svg/ComfyUI-AutoBatchRunner)(あると便利)\n\n\nタグスイッチのみの使用ならComfyUI-PromptSwitchPublicのみ、下に記載のタグを生成1枚毎にランダム切り替え適用するならComfyUI-AutoBatchRunner が必要です。\n\n---\n - Fast Groups Bypasser (rgthree) — rgthree-comfy\n - was-node-suite-comfyui\n - RegexReplace\n - StringConcatenate\n - Text List\n - Text List to Text\n - Text _O\n\n\n\n---\n---\n## プロンプト紹介サイトに掲載されているダンボールタグのスイッチ&ランダムバッチのワークフローです。\n\n\n\n\nーーー現在使用中のポジティブプロンプトノードとポジティブ入力にラインを入れたら使えます。ーーー\n\n\n体、全身等、カメラアングル等スイッチひとつで適用できます、また同じノード内のタグを生成一枚ごとににランダム適用できます\n\n例：1枚目、全身、下から、スカートをめくる、顔をそらす\n　　2枚目、上半身、服をめくる、ブラチラ\n　\nとこのような感じで生成できますが、あくまでも【ランダム】です。ガチャ狙い用途\n詳しい使用方法は[ComfyUI-PromptSwitch](https://github.com/Boba-svg/ComfyUI-PromptSwitch)で丁寧に説明されています\n\n\n---\n---\n## ノード内のタグの追加、書き方\n\n - 各ノード上で【Eキー】で編集できる、もう一度【Eキー】で戻る\n - 線で区切る場合は」Enterで段落を付ける\n\n\n ---\n---\nもっといい方法や接続方法があるかもしれません、私の知識ではこれが限界です\nタグに慣れていない頃タグを検索する、コピペするが面倒で作りました\n\n\n\n\n　\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "## 必要なカスタムノード\n\n---\n\n\n[ComfyUI-PromptSwitch](https://github.com/Boba-svg/ComfyUI-PromptSwitch)\n\nこちらからDownload、もしくわカスタムノードマネージャーからDownload。\n\n\n---\n[ComfyUI-AutoBatchRunner](https://github.com/Boba-svg/ComfyUI-AutoBatchRunner)(あると便利)\n\n\nタグスイッチのみの使用ならComfyUI-PromptSwitchPublicのみ、下に記載のタグを生成1枚毎にランダム切り替え適用するならComfyUI-AutoBatchRunner が必要です。\n\n---\n - Fast Groups Bypasser (rgthree) — rgthree-comfy\n - was-node-suite-comfyui\n - RegexReplace\n - StringConcatenate\n - Text List\n - Text List to Text\n - Text _O\n\n\n\n---\n---\n## プロンプト紹介サイトに掲載されているダンボールタグのスイッチ&ランダムバッチのワークフローです。\n\n\n\n\nーーー現在使用中のポジティブプロンプトノードとポジティブ入力にラインを入れたら使えます。ーーー\n\n\n体、全身等、カメラアングル等スイッチひとつで適用できます、また同じノード内のタグを生成一枚ごとににランダム適用できます\n\n例：1枚目、全身、下から、スカートをめくる、顔をそらす\n　　2枚目、上半身、服をめくる、ブラチラ\n　\nとこのような感じで生成できますが、あくまでも【ランダム】です。ガチャ狙い用途\n詳しい使用方法は[ComfyUI-PromptSwitch](https://github.com/Boba-svg/ComfyUI-PromptSwitch)で丁寧に説明されています\n\n\n---\n---\n## ノード内のタグの追加、書き方\n\n - 各ノード上で【Eキー】で編集できる、もう一度【Eキー】で戻る\n - 線で区切る場合は」Enterで段落を付ける\n\n\n ---\n---\nもっといい方法や接続方法があるかもしれません、私の知識ではこれが限界です\nタグに慣れていない頃タグを検索する、コピペするが面倒で作りました\n\n\n\n\n　\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 52,
+      "type": "RegexReplace",
+      "pos": [
+        4476.349999999997,
+        1959.7970096550296
+      ],
+      "size": [
+        210,
+        295
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "widget": {
+            "name": "string"
+          },
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            45
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.61",
+        "Node name for S&R": "RegexReplace",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "string": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "^,|,$",
+        "",
+        true,
+        false,
+        false,
+        0
+      ],
+      "widgets_values_named": {
+        "string": "",
+        "regex_pattern": "^,|,$",
+        "replace": "",
+        "case_insensitive": true,
+        "multiline": false,
+        "dotall": false,
+        "count": 0
+      },
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": "default"
+    },
+    {
+      "id": 53,
+      "type": "CLIPTextEncode",
+      "pos": [
+        5385.166110899923,
+        1733.7280528958108
+      ],
+      "size": [
+        335.537190082644,
+        114.62809917355366
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": []
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.65",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "text": ""
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 55,
+      "type": "PromptSwitch",
+      "pos": [
+        4909.69552333678,
+        2379.6449822872605
+      ],
+      "size": [
+        400,
+        626
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            46
+          ]
+        }
+      ],
+      "title": "部位のアップ",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "//,// 胸部のアップ\n// close-up, breast focus, shiny skin\n//,// 鎖骨のアップ\n// close-up, collarbone, eyes out of frame, visible nose\n//,// お腹のアップ\n// close-up, navel focus, arched back, from below, dutch angle\n//,// 背中・腰回りのアップ\n// back focus, waist, head out of frame, facing away, from behind\n//,// 手のアップ\n// hand focus, fingernails, wrist gap, head out of frame\n//,// 肘のアップ\n// close-up, elbow, bent elbow, eyes out of frame, from below, dutch angle\n//,// 腕のアップ\n// close-up, arm, head out of frame, from side\n//,// 脇のアップ\n// armpit focus, armpit peek, arm up, eyes out of frame\n//,// 光の演出(逆光)\n// backlighting\n//,// 下半身のみをフレームに入れる\n// lower body\n//,// 太もものアップ(正面)\n// lower body, thigh focus, knees out of frame\n//,// 太もものアップ(横)\n// lower body, thigh focus, knee up, sitting, from side\n//,// 裏もものアップ\n// lower body, thigh focus, kneepits, sitting, from side\n//,// 膝のアップ\n// lower body, close-up, knees, sitting, straight-on, dutch angle\n//,// 膝裏のアップ\n// lower body, close-up, kneepits, dutch angle\n//,// お尻(ヒップ)のアップ\n// lower body, ass focus, butt out, from behind, from below, dutch angle"
+      ],
+      "widgets_values_named": {
+        "text": "//,// 胸部のアップ\n// close-up, breast focus, shiny skin\n//,// 鎖骨のアップ\n// close-up, collarbone, eyes out of frame, visible nose\n//,// お腹のアップ\n// close-up, navel focus, arched back, from below, dutch angle\n//,// 背中・腰回りのアップ\n// back focus, waist, head out of frame, facing away, from behind\n//,// 手のアップ\n// hand focus, fingernails, wrist gap, head out of frame\n//,// 肘のアップ\n// close-up, elbow, bent elbow, eyes out of frame, from below, dutch angle\n//,// 腕のアップ\n// close-up, arm, head out of frame, from side\n//,// 脇のアップ\n// armpit focus, armpit peek, arm up, eyes out of frame\n//,// 光の演出(逆光)\n// backlighting\n//,// 下半身のみをフレームに入れる\n// lower body\n//,// 太もものアップ(正面)\n// lower body, thigh focus, knees out of frame\n//,// 太もものアップ(横)\n// lower body, thigh focus, knee up, sitting, from side\n//,// 裏もものアップ\n// lower body, thigh focus, kneepits, sitting, from side\n//,// 膝のアップ\n// lower body, close-up, knees, sitting, straight-on, dutch angle\n//,// 膝裏のアップ\n// lower body, close-up, kneepits, dutch angle\n//,// お尻(ヒップ)のアップ\n// lower body, ass focus, butt out, from behind, from below, dutch angle"
+      }
+    },
+    {
+      "id": 56,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        3414.4556719757607,
+        1947.7002380205254
+      ],
+      "size": [
+        365.59756293912903,
+        323.0597408735771
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "LORA",
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 58,
+      "type": "PromptSwitch",
+      "pos": [
+        1744.4440393661541,
+        3141.3389657710245
+      ],
+      "size": [
+        374.7285021514924,
+        144
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prefix",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "title": "ノードにフォーカスして【Eキー】で編集",
+      "properties": {
+        "cnr_id": "comfyui-promptswitch",
+        "ver": "0.5.1",
+        "Node name for S&R": "PromptSwitch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "\n\n\n\n\n//,// ここに自由に追加　【ここは見出し】\n// 【ここにはタグ】\n\n\n\n// コンパクト表示ならここにタグ//ここに見出し\n \n"
+      ],
+      "widgets_values_named": {
+        "text": "\n\n\n\n\n//,// ここに自由に追加　【ここは見出し】\n// 【ここにはタグ】\n\n\n\n// コンパクト表示ならここにタグ//ここに見出し\n \n"
+      }
+    }
+  ],
+  "links": [
+    [
+      2,
+      31,
+      0,
+      19,
+      0,
+      "STRING"
+    ],
+    [
+      3,
+      30,
+      0,
+      19,
+      1,
+      "STRING"
+    ],
+    [
+      4,
+      28,
+      0,
+      19,
+      2,
+      "STRING"
+    ],
+    [
+      5,
+      12,
+      0,
+      19,
+      3,
+      "STRING"
+    ],
+    [
+      6,
+      11,
+      0,
+      19,
+      4,
+      "STRING"
+    ],
+    [
+      7,
+      13,
+      0,
+      19,
+      5,
+      "STRING"
+    ],
+    [
+      8,
+      14,
+      0,
+      19,
+      6,
+      "STRING"
+    ],
+    [
+      12,
+      37,
+      0,
+      35,
+      0,
+      "STRING"
+    ],
+    [
+      13,
+      19,
+      0,
+      37,
+      0,
+      "LIST"
+    ],
+    [
+      15,
+      8,
+      0,
+      33,
+      0,
+      "STRING"
+    ],
+    [
+      16,
+      7,
+      0,
+      33,
+      1,
+      "STRING"
+    ],
+    [
+      17,
+      3,
+      0,
+      33,
+      2,
+      "STRING"
+    ],
+    [
+      18,
+      4,
+      0,
+      33,
+      3,
+      "STRING"
+    ],
+    [
+      19,
+      6,
+      0,
+      33,
+      4,
+      "STRING"
+    ],
+    [
+      20,
+      2,
+      0,
+      33,
+      5,
+      "STRING"
+    ],
+    [
+      21,
+      5,
+      0,
+      33,
+      6,
+      "STRING"
+    ],
+    [
+      22,
+      33,
+      0,
+      42,
+      0,
+      "LIST"
+    ],
+    [
+      23,
+      42,
+      0,
+      35,
+      1,
+      "STRING"
+    ],
+    [
+      24,
+      17,
+      0,
+      32,
+      0,
+      "STRING"
+    ],
+    [
+      25,
+      9,
+      0,
+      32,
+      1,
+      "STRING"
+    ],
+    [
+      26,
+      16,
+      0,
+      32,
+      2,
+      "STRING"
+    ],
+    [
+      27,
+      10,
+      0,
+      32,
+      3,
+      "STRING"
+    ],
+    [
+      28,
+      15,
+      0,
+      32,
+      4,
+      "STRING"
+    ],
+    [
+      29,
+      32,
+      0,
+      43,
+      0,
+      "LIST"
+    ],
+    [
+      30,
+      35,
+      0,
+      44,
+      0,
+      "STRING"
+    ],
+    [
+      31,
+      43,
+      0,
+      44,
+      1,
+      "STRING"
+    ],
+    [
+      32,
+      29,
+      0,
+      32,
+      5,
+      "STRING"
+    ],
+    [
+      33,
+      27,
+      0,
+      32,
+      6,
+      "STRING"
+    ],
+    [
+      34,
+      25,
+      0,
+      45,
+      0,
+      "STRING"
+    ],
+    [
+      35,
+      22,
+      0,
+      45,
+      1,
+      "STRING"
+    ],
+    [
+      36,
+      24,
+      0,
+      45,
+      2,
+      "STRING"
+    ],
+    [
+      37,
+      26,
+      0,
+      45,
+      3,
+      "STRING"
+    ],
+    [
+      38,
+      45,
+      0,
+      46,
+      0,
+      "LIST"
+    ],
+    [
+      39,
+      44,
+      0,
+      47,
+      0,
+      "STRING"
+    ],
+    [
+      40,
+      46,
+      0,
+      47,
+      1,
+      "STRING"
+    ],
+    [
+      41,
+      47,
+      0,
+      49,
+      0,
+      "STRING"
+    ],
+    [
+      42,
+      48,
+      0,
+      49,
+      1,
+      "STRING"
+    ],
+    [
+      44,
+      49,
+      0,
+      52,
+      0,
+      "STRING"
+    ],
+    [
+      45,
+      52,
+      0,
+      53,
+      1,
+      "STRING"
+    ],
+    [
+      46,
+      55,
+      0,
+      45,
+      4,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "画角、アングル、表現方法",
+      "bounding": [
+        2351.822250884386,
+        2298.9951884318157,
+        377.68351960453856,
+        794
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "身体全体ポーズ",
+      "bounding": [
+        2743.87894340596,
+        2300.596795080444,
+        628.195143539233,
+        826
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "腕、両手",
+      "bounding": [
+        3380.5836331300948,
+        2300.6348208284485,
+        744.8822425974226,
+        929.6653816967787
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "手",
+      "bounding": [
+        4132.1676047934925,
+        2300.511942239709,
+        377.3066104842492,
+        790
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "足、膝、つま先",
+      "bounding": [
+        4517.591780726461,
+        2301.0494286201583,
+        363.17878904855843,
+        844
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "SEX表現",
+      "bounding": [
+        2355.8407938976234,
+        3218.4569327904574,
+        870.8106409314041,
+        849.4051775601388
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 10,
+      "title": "胸サイズ",
+      "bounding": [
+        3242.33646551109,
+        3247.0636640180996,
+        379.5692226438937,
+        415.09706863645124
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 11,
+      "title": "陰毛、パンティ",
+      "bounding": [
+        3240.3501384953397,
+        3682.998662536771,
+        381.9276201365624,
+        344.13693124901965
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 12,
+      "title": "胸チラ",
+      "bounding": [
+        3642.517355755443,
+        3252.2652059819666,
+        432.7894069164972,
+        308.44208657850777
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 13,
+      "title": "パンチラ、スカート捲り",
+      "bounding": [
+        3643.618776982539,
+        3578.2285023842105,
+        400.85080438312707,
+        291.10361336562073
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 14,
+      "title": "部位アップ",
+      "bounding": [
+        4889.060269371605,
+        2301.1357885164316,
+        439.03894397323984,
+        726.0239181463567
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "ds": {
+      "scale": 1.1000000000000008,
+      "offset": [
+        -1192.7851999314387,
+        -2139.997897583652
+      ]
+    },
+    "links_added_by_ue": [],
+    "frontendVersion": "1.51.9",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
