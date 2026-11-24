@@ -136,6 +136,7 @@ install_models () {
 
   say "LoRA (CivitAI — need CIVITAI_TOKEN)"
   civitai_lora 2959007 2838381   # urn:air:anima:lora:civitai:1252497@2959007+2838381
+  civitai_lora 3191697 3072447   # urn:air:anima:lora:civitai:2828738@3191697+3072447
 
   say "Shared text encoder + VAE (HuggingFace)"
   fetch "https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/text_encoders/qwen_3_06b_base.safetensors" \
