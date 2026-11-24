@@ -140,6 +140,7 @@ install_models () {
   civitai_lora 3062688 2941284   # urn:air:anima:lora:civitai:2724933@3062688+2941284
   civitai_lora 3202009 3083294   # urn:air:anima:lora:civitai:1979448@3202009+3083294
   civitai_lora 3184772 3065310   # bold enhancer | urn:air:anima:lora:civitai:2823195@3184772+3065310
+  civitai_lora 3188441 3069074   # urn:air:anima:lora:civitai:2826118@3188441+3069074
 
   say "Shared text encoder + VAE (HuggingFace)"
   fetch "https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/text_encoders/qwen_3_06b_base.safetensors" \
