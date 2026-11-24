@@ -56,6 +56,28 @@ civitai () {   # $1 = civitai download URL (may already have ?fileId=...)  $2 = 
 }
 
 # --------------------------------------------------------------- custom nodes
+civitai_lora () {  # $1 version_id  $2 file_id  -> models/loras/ with the real filename
+  local vid="$1" fid="$2" dir="$COMFY_ROOT/models/loras"
+  if [ -z "${CIVITAI_TOKEN:-}" ]; then
+    echo "  !! CIVITAI_TOKEN not set — skipping LoRA $vid"; FAILS+=("lora $vid (no token)"); return 1; fi
+  mkdir -p "$dir"
+  local info name
+  info=$(curl -sL --fail "https://civitai.com/api/v1/model-versions/${vid}?token=${CIVITAI_TOKEN}")
+  name=$(printf '%s' "$info" | python -c "import sys,json
+d=json.load(sys.stdin); fid='$fid'
+n=''
+for f in d.get('files',[]):
+    if str(f.get('id'))==fid: n=f.get('name','')
+if not n and d.get('files'): n=d['files'][0].get('name','')
+print(n)" 2>/dev/null)
+  if [ -z "$name" ]; then echo "  !! couldn't resolve LoRA name (version $vid)"; FAILS+=("lora $vid (unresolved)"); return 1; fi
+  local dest="$dir/$name"
+  if [ -s "$dest" ]; then echo "  SKIP (exists): loras/$name"; return 0; fi
+  echo "  GET (civitai lora): loras/$name"
+  if ! curl -L --fail -C - -o "$dest" "https://civitai.com/api/download/models/${vid}?fileId=${fid}&token=${CIVITAI_TOKEN}"; then
+    echo "  !! FAILED: loras/$name"; rm -f "$dest"; FAILS+=("$dest"); fi
+}
+
 clone () {
   local url="$1" name dir; name="$(basename "$url" .git)"; dir="$COMFY_ROOT/custom_nodes/$name"
   if [ -d "$dir" ]; then echo "  SKIP (exists): $name"; return 0; fi
@@ -111,6 +133,9 @@ install_models () {
   # SilvermoonMix Anima v2.3 2.9B Turbo (default base UNet)
   civitai "https://civitai.com/api/download/models/3335132" \
           "$COMFY_ROOT/models/diffusion_models/silvermoonmixAnima_v2329BTurbo.safetensors"
+
+  say "LoRA (CivitAI — need CIVITAI_TOKEN)"
+  civitai_lora 2959007 2838381   # urn:air:anima:lora:civitai:1252497@2959007+2838381
 
   say "Shared text encoder + VAE (HuggingFace)"
   fetch "https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/text_encoders/qwen_3_06b_base.safetensors" \
