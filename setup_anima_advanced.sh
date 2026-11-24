@@ -22,6 +22,17 @@ HF_AUTH=(); [ -n "${HF_TOKEN:-}" ] && HF_AUTH=(--header "Authorization: Bearer $
 FAILS=()
 say(){ echo -e "\n=== $* ==="; }
 
+# Pip must install into the ComfyUI venv, not whatever python the provisioning
+# shell happens to be (the Vast template activates /venv/main only AFTER the
+# provisioning script runs, so a bare `pip` lands in the wrong env -> cv2/piexif
+# "No module named" at ComfyUI start).
+if   [ -x /venv/main/bin/python ];                                  then PY=/venv/main/bin/python
+elif [ -n "${VIRTUAL_ENV:-}" ] && [ -x "$VIRTUAL_ENV/bin/python" ]; then PY="$VIRTUAL_ENV/bin/python"
+elif [ -x "$COMFY_ROOT/../venv/bin/python" ];                      then PY="$COMFY_ROOT/../venv/bin/python"
+else PY="$(command -v python3 || command -v python)"; fi
+PIP=("$PY" -m pip)
+echo "Python for pip: $PY"
+
 fetch () {  # $1 url  $2 dest
   local url="$1" dest="$2"; mkdir -p "$(dirname "$dest")"
   if [ -s "$dest" ]; then echo "  SKIP (exists): ${dest#$COMFY_ROOT/}"; return 0; fi
@@ -40,7 +51,7 @@ civitai_find () {  # $1 civitai model id  $2 exact filename to match  $3 dest
   echo "  RESOLVE (civitai model $mid): $fname"
   local durl
   durl=$(curl -sL --fail "https://civitai.com/api/v1/models/${mid}?token=${CIVITAI_TOKEN}" \
-    | python -c "import sys,json;
+    | "$PY" -c "import sys,json;
 d=json.load(sys.stdin); t='''$fname'''.lower(); u=''
 for v in d.get('modelVersions',[]):
     for f in v.get('files',[]):
@@ -57,21 +68,36 @@ civitai_lora () {  # $1 version_id  $2 file_id  -> models/loras/ with the real f
   if [ -z "${CIVITAI_TOKEN:-}" ]; then
     echo "  !! CIVITAI_TOKEN not set — skipping LoRA $vid"; FAILS+=("lora $vid (no token)"); return 1; fi
   mkdir -p "$dir"
-  local info name
-  info=$(curl -sL --fail "https://civitai.com/api/v1/model-versions/${vid}?token=${CIVITAI_TOKEN}")
-  name=$(printf '%s' "$info" | python -c "import sys,json
-d=json.load(sys.stdin); fid='$fid'
-n=''
+  local dl="https://civitai.com/api/download/models/${vid}?fileId=${fid}&token=${CIVITAI_TOKEN}"
+  # Resolve the real filename from the version API — with retries, because during
+  # early boot this endpoint sometimes returns empty and all LoRAs "fail to resolve".
+  local info name tries=0
+  while [ $tries -lt 4 ]; do
+    info=$(curl -sL "https://civitai.com/api/v1/model-versions/${vid}?token=${CIVITAI_TOKEN}")
+    name=$(printf '%s' "$info" | "$PY" -c "import sys,json
+try: d=json.load(sys.stdin)
+except Exception: sys.exit(0)
+fid='$fid'; n=''
 for f in d.get('files',[]):
     if str(f.get('id'))==fid: n=f.get('name','')
 if not n and d.get('files'): n=d['files'][0].get('name','')
 print(n)" 2>/dev/null)
-  if [ -z "$name" ]; then echo "  !! couldn't resolve LoRA name (version $vid)"; FAILS+=("lora $vid (unresolved)"); return 1; fi
-  local dest="$dir/$name"
-  if [ -s "$dest" ]; then echo "  SKIP (exists): loras/$name"; return 0; fi
-  echo "  GET (civitai lora): loras/$name"
-  if ! curl -L --fail -C - -o "$dest" "https://civitai.com/api/download/models/${vid}?fileId=${fid}&token=${CIVITAI_TOKEN}"; then
-    echo "  !! FAILED: loras/$name"; rm -f "$dest"; FAILS+=("$dest"); fi
+    [ -n "$name" ] && break
+    tries=$((tries+1)); echo "  .. version API empty for $vid, retry $tries/4"; sleep 3
+  done
+  if [ -n "$name" ]; then
+    local dest="$dir/$name"
+    if [ -s "$dest" ]; then echo "  SKIP (exists): loras/$name"; return 0; fi
+    echo "  GET (civitai lora): loras/$name"
+    if curl -L --fail -C - -o "$dest" "$dl"; then return 0; fi
+    echo "  !! direct GET failed for loras/$name — trying server filename"; rm -f "$dest"
+  else
+    echo "  !! name unresolved (version $vid) after retries — downloading via server filename"
+  fi
+  # Fallback: let curl name the file from the Content-Disposition header (no version API needed).
+  if ( cd "$dir" && curl -L --fail -OJ --remote-header-name "$dl" ); then
+    echo "  OK (server-named): lora version $vid"; return 0; fi
+  echo "  !! FAILED: lora version $vid"; FAILS+=("lora $vid"); return 1
 }
 
 clone () {  # $1 repo url
@@ -79,16 +105,16 @@ clone () {  # $1 repo url
   if [ -d "$dir" ]; then echo "  SKIP (exists): $name"; return 0; fi
   echo "  CLONE: $name"
   if git clone --depth 1 "$url" "$dir"; then
-    [ -f "$dir/requirements.txt" ] && { pip install -r "$dir/requirements.txt" || { echo "  !! reqs failed: $name"; FAILS+=("deps: $name"); }; }
-    [ -f "$dir/install.py" ] && ( cd "$dir" && python install.py ) || true
+    [ -f "$dir/requirements.txt" ] && { "${PIP[@]}" install -r "$dir/requirements.txt" || { echo "  !! reqs failed: $name"; FAILS+=("deps: $name"); }; }
+    [ -f "$dir/install.py" ] && ( cd "$dir" && "$PY" install.py ) || true
   else echo "  !! clone failed: $url"; FAILS+=("node: $url"); fi
 }
 
 install_nodes () {
   say "Custom nodes (exact set from the workflow's declared sources)"
   mkdir -p "$COMFY_ROOT/custom_nodes"
-  echo "  Installing shared deps (opencv, etc.)"
-  pip install opencv-python-headless numpy pillow scipy || echo "  !! shared deps hiccup"
+  echo "  Installing shared deps (opencv, piexif, etc.) into: $PY"
+  "${PIP[@]}" install opencv-python-headless piexif numpy pillow scipy || echo "  !! shared deps hiccup"
   clone https://github.com/ltdrdata/ComfyUI-Manager
   clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
   clone https://github.com/yolain/ComfyUI-Easy-Use
@@ -106,7 +132,26 @@ install_nodes () {
   clone https://github.com/WASasquatch/was-node-suite-comfyui
   # NOTE: the workflow also references RTXVideoSuperResolution (NVIDIA RTX-desktop /
   # Windows DLSS). It does NOT run on a Linux cloud GPU, so it's intentionally skipped.
+  # Self-heal: ensure every cloned node's deps are in the venv even on a re-run
+  # (clone() skips already-present dirs, so it wouldn't reinstall their requirements).
+  echo "  Ensuring all custom-node requirements are in the venv"
+  for r in "$COMFY_ROOT"/custom_nodes/*/requirements.txt; do
+    [ -f "$r" ] && "${PIP[@]}" install -r "$r" >/dev/null 2>&1 || true
+  done
   echo "  (Anything still missing: ComfyUI-Manager -> Install Missing Custom Nodes.)"
+}
+
+install_workflows () {
+  say "Workflows — drop into ComfyUI's panel folder (user/default/workflows)"
+  # The workflow sidebar reads this folder; PROVISIONING_COMFYUI_WORKFLOWS is meant to
+  # fill it, but if that env var isn't set the panel is empty. Do it here so it always works.
+  local wdir="$COMFY_ROOT/user/default/workflows" base="https://raw.githubusercontent.com/K-Abdullah-dev/Comfy/main"
+  mkdir -p "$wdir"
+  for wf in AnimaAdvancedV10.json AnimaAdvancedV10_PosePicker.json; do
+    echo "  GET: workflows/$wf"
+    if ! curl -sL --fail -o "$wdir/$wf" "$base/$wf"; then
+      echo "  !! FAILED: workflows/$wf"; FAILS+=("workflow $wf"); fi
+  done
 }
 
 install_models () {
@@ -160,10 +205,11 @@ echo "ComfyUI root : $COMFY_ROOT"
 echo "CivitAI token: $([ -n "${CIVITAI_TOKEN:-}" ] && echo set || echo 'NOT set')"
 echo "HF token     : $([ -n "${HF_TOKEN:-}" ] && echo set || echo 'NOT set')"
 case "$WHAT" in
-  nodes)  install_nodes ;;
-  models) install_models ;;
-  all)    install_nodes; install_models ;;
-  *) echo "usage: bash setup_anima_advanced.sh [all|nodes|models]"; exit 2 ;;
+  nodes)     install_nodes ;;
+  models)    install_models ;;
+  workflows) install_workflows ;;
+  all)       install_nodes; install_models; install_workflows ;;
+  *) echo "usage: bash setup_anima_advanced.sh [all|nodes|models|workflows]"; exit 2 ;;
 esac
 
 if command -v supervisorctl >/dev/null 2>&1 && [ "$WHAT" != "models" ]; then
