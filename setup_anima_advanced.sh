@@ -29,15 +29,27 @@ fetch () {  # $1 url  $2 dest
   if ! curl -L --fail -C - "${HF_AUTH[@]}" -o "$dest" "$url"; then
     echo "  !! FAILED: ${dest#$COMFY_ROOT/}"; rm -f "$dest"; FAILS+=("$dest"); fi
 }
-civitai () {  # $1 civitai download url  $2 dest
-  local url="$1" dest="$2"
+civitai_find () {  # $1 civitai model id  $2 exact filename to match  $3 dest
+  # Resolves the file's download URL from the CivitAI API at runtime (no hardcoded
+  # version/file ids that go stale), then downloads it with the token.
+  local mid="$1" fname="$2" dest="$3"
   if [ -z "${CIVITAI_TOKEN:-}" ]; then
-    echo "  !! CIVITAI_TOKEN not set — skipping ${dest#$COMFY_ROOT/}"; FAILS+=("$dest (no token)"); return 1; fi
+    echo "  !! CIVITAI_TOKEN not set — skipping $fname"; FAILS+=("$dest (no token)"); return 1; fi
   mkdir -p "$(dirname "$dest")"
   if [ -s "$dest" ]; then echo "  SKIP (exists): ${dest#$COMFY_ROOT/}"; return 0; fi
-  local sep="?"; [[ "$url" == *"?"* ]] && sep="&"
-  echo "  GET (civitai): ${dest#$COMFY_ROOT/}"
-  if ! curl -L --fail -C - -o "$dest" "${url}${sep}token=${CIVITAI_TOKEN}"; then
+  echo "  RESOLVE (civitai model $mid): $fname"
+  local durl
+  durl=$(curl -sL --fail "https://civitai.com/api/v1/models/${mid}?token=${CIVITAI_TOKEN}" \
+    | python -c "import sys,json;
+d=json.load(sys.stdin); t='''$fname'''.lower(); u=''
+for v in d.get('modelVersions',[]):
+    for f in v.get('files',[]):
+        if f.get('name','').lower()==t: u=f.get('downloadUrl','')
+print(u)" 2>/dev/null)
+  if [ -z "$durl" ]; then
+    echo "  !! could not find '$fname' in CivitAI model $mid"; FAILS+=("$dest (not found in model $mid)"); return 1; fi
+  local sep="?"; [[ "$durl" == *"?"* ]] && sep="&"
+  if ! curl -L --fail -C - -o "$dest" "${durl}${sep}token=${CIVITAI_TOKEN}"; then
     echo "  !! FAILED: ${dest#$COMFY_ROOT/}"; rm -f "$dest"; FAILS+=("$dest"); fi
 }
 clone () {  # $1 repo url
@@ -98,19 +110,17 @@ install_models () {
   fetch "https://huggingface.co/Bingsu/adetailer/resolve/main/hand_yolov9c.pt" \
         "$COMFY_ROOT/models/ultralytics/bbox/hand_yolov9c.pt"
 
-  say "=== 3 NICHE MODELS — source not auto-confirmed (see notes at end) ==="
-  # Eye detector + anime-nsfw segmentation: from CivitAI 'anime nsfw detection / adetailer
-  # all-in-one' (model 1313556). Needs the exact file-download URLs + CIVITAI_TOKEN.
-  # Uncomment and fill the <versionId>/<fileId> once confirmed:
-  # civitai "https://civitai.com/api/download/models/<versionId>?fileId=<fileId>" \
-  #         "$COMFY_ROOT/models/ultralytics/bbox/Eyeful_v2-Individual.pt"
-  # civitai "https://civitai.com/api/download/models/<versionId>?fileId=<fileId>" \
-  #         "$COMFY_ROOT/models/ultralytics/segm/ntd11_anime_nsfw_segm_v5-variant1.pt"
-  # ControlNet-LLLite for Anima (loaded via ModelPatchLoader -> models/model_patches/):
-  # fetch "<confirmed HF url>" \
-  #       "$COMFY_ROOT/models/model_patches/anima-lllite-any-test-like-v2.safetensors"
-  echo "  (left unfetched: Eyeful_v2-Individual.pt, ntd11_anime_nsfw_segm_v5-variant1.pt,"
-  echo "   anima-lllite-any-test-like-v2.safetensors — fill sources in this script, then re-run)"
+  say "ControlNet-LLLite (HuggingFace, Comfy-Org)"
+  fetch "https://huggingface.co/Comfy-Org/Anima-LLLite/resolve/main/model_patches/anima-lllite-any-test-like-v2.safetensors" \
+        "$COMFY_ROOT/models/model_patches/anima-lllite-any-test-like-v2.safetensors"
+
+  say "Eye detector + anime segmentation (CivitAI — need CIVITAI_TOKEN)"
+  # Eyeful v2 (robust eye detection) — CivitAI model 178518
+  civitai_find 178518 "Eyeful_v2-Individual.pt" \
+        "$COMFY_ROOT/models/ultralytics/bbox/Eyeful_v2-Individual.pt"
+  # anime nsfw detection / adetailer all-in-one — CivitAI model 1313556
+  civitai_find 1313556 "ntd11_anime_nsfw_segm_v5-variant1.pt" \
+        "$COMFY_ROOT/models/ultralytics/segm/ntd11_anime_nsfw_segm_v5-variant1.pt"
 }
 
 echo "ComfyUI root : $COMFY_ROOT"
