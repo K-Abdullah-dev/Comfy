@@ -192,10 +192,13 @@ install_models () {
   fetch "https://huggingface.co/Comfy-Org/Anima-LLLite/resolve/main/model_patches/anima-lllite-any-test-like-v2.safetensors" \
         "$COMFY_ROOT/models/model_patches/anima-lllite-any-test-like-v2.safetensors"
 
-  say "Eye detector + anime segmentation (CivitAI — need CIVITAI_TOKEN)"
-  # Eyeful v2 (robust eye detection) — CivitAI model 178518
-  civitai_find 178518 "Eyeful_v2-Individual.pt" \
+  say "Eye detector — Eyeful v2 Individual (HuggingFace mirror, no token)"
+  # CivitAI 178518 now ships this as a .zip (so the old civitai_find by .pt name failed).
+  # MidnightRunner mirrors the raw .pt under the original name — token-free and reliable.
+  fetch "https://huggingface.co/MidnightRunner/Ultralytics/resolve/main/bbox/Eyeful_v2-Individual.pt" \
         "$COMFY_ROOT/models/ultralytics/bbox/Eyeful_v2-Individual.pt"
+
+  say "Anime segmentation (CivitAI — need CIVITAI_TOKEN)"
   # anime nsfw detection / adetailer all-in-one — CivitAI model 1313556
   civitai_find 1313556 "ntd11_anime_nsfw_segm_v5-variant1.pt" \
         "$COMFY_ROOT/models/ultralytics/segm/ntd11_anime_nsfw_segm_v5-variant1.pt"
